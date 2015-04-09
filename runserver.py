@@ -33,7 +33,7 @@ def poemtoplaylist(poem):
         indices.append(find_index(tokenedsong, tokenedpoem))
     lenlist = [x['length'] for x in playlist]
     stop = map(lambda (x,y): x+y, zip(indices, lenlist))
-    splitpoem= poem.split(' ')
+    splitpoem = tokenedpoem
     phrases = []
 
     if indices:
