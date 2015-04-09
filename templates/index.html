@@ -1,0 +1,83 @@
+{% extends "base_content.html" %}
+{% block style %}<link rel="stylesheet" href="{{ url_for('static',filename='style_content.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='style_home.css') }}">
+<style>
+.centered-form{
+	margin-top: 0px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+</style>
+{% endblock %}
+{% block heading %}{% endblock %}
+{% block text %}
+
+<center>Spotify publishes poetry made exclusively by song titles (<mark><a href="http://spotifypoetry.tumblr.com">TUMBLR</a></mark>).  This app works in the opposite way: submit a poem and get back a playlist that matches as much of the poem as possible.
+	<br>
+</center>
+
+{% if phrases %}
+<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Poem with song links</h3>
+			 			</div>
+			 			<div class="panel-body">
+{% for block in phrases %}
+	{% if block.song %}
+		<mark><a href="{{ block.link}}"> {{block.words}} </a></mark>
+	
+	{% else %}
+	{{ block.words }}
+	
+	{% endif %}
+{% endfor %}
+</div>
+</div>
+
+{% endif %}
+<br>
+
+<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Convert a poem to a playlist!</h3>
+			 			</div>
+			 			<div class="panel-body">
+{% from "_formhelper.html" import render_field %}
+<form method=post action="/" class="form-horizontal">
+	<div class="control-group">
+	  <label class="control-label">{{ form.poem.label }}</label>
+	  <div class="controls">
+	    {{ form.poem(rows=7, cols=80)|safe }}
+	  </div>
+	</div>
+
+    <br>
+  <p><input type=submit value=Next>
+</div>
+</div>
+</div>
+</form>
+
+<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">How it works:</h3>
+			 			</div>
+			 			<div class="panel-body">
+			 				<h4>1. Identify Key Phrases of the Poem</h4>
+			 				<h4>2. Query Spotify's Public API </h4>
+			 				<h4>3. Chose largest Match</h4>
+			 				<h4>4. Rebuild Poem</h4>
+
+			 				<br>
+			 			The code is available on github - here.
+			 			<br>
+			 			built by Jarret Petrillo (website link)
+			 			</div>
+			 	</div>
+</div>
+
+{% endblock %}
+

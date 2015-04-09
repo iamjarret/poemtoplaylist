@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+
+<head>
+  {% block head %}
+  {% endblock %}
+
+
+  <!--[if lt IE 9]>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                    <script type="text/javascript" src="vendor/bower/html5shiv/dist/html5shiv.js"></script>
+            <![endif]-->
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+  <title>Convert a Poem to a Playlist</title>
+  <meta name="DC.title" content="mcc_content">
+  <meta name="og:title" content="mcc_content">
+  <meta name="og:image" content="http://froont.comimages/froont.png">
+
+
+  <meta name="og:type" content="website">
+  <meta name="og:site_name" content="FROONT">
+  <meta name="DC.language" scheme="ISO639-1" content="en">
+  <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+
+  {% block style %}{% endblock %}
+
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='live-patch.js') }}"></script>
+
+  <script type="text/javascript">
+    var fonts = {
+      "Didact Gothic": {
+        "family": "Didact Gothic",
+        "source": "google",
+        "subsets": [
+          "cyrillic",
+          "cyrillic-ext",
+          "greek",
+          "greek-ext",
+          "latin",
+          "latin-ext"
+        ],
+        "variants": [
+          "regular"
+        ]
+      }
+    };
+  </script>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='webfont.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='fontloader.js') }}"></script>
+
+
+
+  <meta http-equiv="content-language" content="en">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
+
+</head>
+
+<body>
+  
+  <div class="b-content">
+    <div id="fr_54a820204a60055d67000012" class="fr-widget fr-container fr_gallery_01 ">
+      <div id="fr_54a820204a60055d67000015" class="fr-widget fr-img fr_image ">
+	{% block top %}
+	{% endblock %}
+      </div>
+    </div>
+
+{% block body %}
+{% endblock %}
+
+
+  </div>
+  <div class="fr-copyright-footer">
+    <div class="fr-widget fr-container">
+      <div class="fr-widget fr-text fr-wf fr-made-with-froont">
+        © 2015 Jarret Petrillo
+      </div>
+    </div>
+    <div class="fr-bottom-em-spacer"></div>
+  </div>
+  <div id="footer-assets">
+  </div>
+</body>
+
+</html>
+
+

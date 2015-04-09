@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<style>
+.center-pills { display: inline-block; }
+</style>
+
+{% block head2 %}
+{% endblock %}
+
+{% endblock %}
+
+{% block top %}
+
+    <div class="text-center">      
+
+    <div class="page-header">
+    <center>
+    <a href="{{ url_for('home') }}">
+    <h1>Poem to Playlist!</h1>
+    </a>
+    </center>
+    
+
+</div>
+</div>
+{% endblock %}
