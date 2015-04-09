@@ -101,7 +101,7 @@ def one_iteration(phrase, phraselist, tokenedlist):
     searched = []
     for track in results['tracks']['items']:
         name = track['name']
-        link = track['album']['external_urls']['spotify']
+        link = track['external_urls']['spotify']
         #image = track['album']['images'][0]['url']
         artist = track['artists'][0]['name']
         trackid = track['id']

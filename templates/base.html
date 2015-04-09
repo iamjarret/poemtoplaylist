@@ -45,10 +45,15 @@
         ]
       }
     };
+
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
   </script>
 
   <script type="text/javascript" src="{{ url_for('static', filename='webfont.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='fontloader.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery.tooltip.js') }}"></script>
 
 
 
